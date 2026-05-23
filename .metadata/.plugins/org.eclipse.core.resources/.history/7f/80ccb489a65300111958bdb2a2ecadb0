@@ -1,0 +1,5 @@
+package com.nt.samepackage;
+
+public class SamePackageSubClass {
+
+}

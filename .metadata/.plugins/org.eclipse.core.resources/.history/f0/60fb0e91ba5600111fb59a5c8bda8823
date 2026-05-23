@@ -1,0 +1,8 @@
+package com.nt.collectionenhancements;
+
+public class StreamExample {
+
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,8 @@
+package com.nt.samepackage;
+
+public class SamePackageSubClass {
+
+	public static void main(String[] args) {
+		
+	}
+}

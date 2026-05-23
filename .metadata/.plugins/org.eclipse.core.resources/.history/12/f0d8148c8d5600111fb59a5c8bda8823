@@ -1,0 +1,6 @@
+package com.nt.java8features;
+
+public interface Test5 {
+
+	public void sub(int a);
+}

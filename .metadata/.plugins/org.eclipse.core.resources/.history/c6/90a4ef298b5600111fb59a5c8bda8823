@@ -1,0 +1,11 @@
+package com.nt.java8features;
+
+public class EmployeeWithPreDefinedClasses {
+
+	public static void main(String[] args) {
+		//Function-->Take arg and return arg
+		//Supplier--> takes nothing but return something
+		//Predicate-->takes no args and return boolean
+		//Consumer-->takes arg but return nothing
+	}
+}

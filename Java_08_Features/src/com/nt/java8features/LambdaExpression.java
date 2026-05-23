@@ -1,0 +1,30 @@
+package com.nt.java8features;
+
+public class LambdaExpression {
+
+	public int summing(Test2 t) {
+		return t.sum(40);
+	}
+	
+	public static void main(String[] args) {
+		LambdaExpression le=new LambdaExpression();
+		
+		//anonymous object
+		Test2 t2=new Test2() {
+			
+			@Override
+			public int sum(int a) {
+				return a+10;
+			}
+		};
+		System.out.println(le.summing(t2));
+		
+		//lambda expression i.e functional programming
+		System.out.println(le.summing((x)->{
+			return 550;
+		}));
+			
+	}
+	
+	
+}

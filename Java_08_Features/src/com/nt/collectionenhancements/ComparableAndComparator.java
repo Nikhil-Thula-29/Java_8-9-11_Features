@@ -1,0 +1,26 @@
+package com.nt.collectionenhancements;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class ComparableAndComparator {
+
+	public static void main(String[] args) {
+		List<Integer> li=new ArrayList<>();
+		li.add(10);
+		li.add(93);
+		li.add(36);
+		li.add(55);
+		li.add(21);
+		
+		Collections.sort(li);
+		System.out.println(li.toString());
+		Comparator<Integer> comp=(x,y)->{
+			return (x < y) ? 1 : ((x == y) ? 0 : -1);
+		};
+		Collections.sort(li, comp);
+		System.out.println("By comparator: "+li);
+	}
+}

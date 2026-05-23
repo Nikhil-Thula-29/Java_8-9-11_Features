@@ -1,0 +1,9 @@
+package com.nt.java8features;
+
+@FunctionalInterface
+public interface Test5 {
+
+	public void sub(int a);
+	
+	public void mul(int a,int b);
+}

@@ -1,0 +1,14 @@
+package com.nt.java8features;
+
+public class LambdaExpression {
+
+	public static void main(String[] args) {
+		Test2 t1=new Test2() {
+			
+			@Override
+			public int sum(int a) {
+				return 50;
+			}
+		};
+	}
+}

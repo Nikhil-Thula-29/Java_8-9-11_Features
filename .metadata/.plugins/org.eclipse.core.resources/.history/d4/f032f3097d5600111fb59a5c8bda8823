@@ -1,0 +1,10 @@
+package com.nt.java8features;
+
+public class Employee {
+
+	public void main(String[] args) {
+		Test t1= ()->{
+			System.out.println("This is display method");
+		};
+	}
+}

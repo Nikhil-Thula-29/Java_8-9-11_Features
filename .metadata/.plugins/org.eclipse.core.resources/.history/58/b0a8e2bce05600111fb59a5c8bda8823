@@ -1,0 +1,23 @@
+package com.nt.collectionenhancements;
+
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+public class MinMaxSort {
+
+	public static void main(String[] args) {
+		List<Integer> li=new ArrayList<>();
+		li.add(10);
+		li.add(93);
+		li.add(36);
+		li.add(55);
+		li.add(21);
+		
+		//write a program to print min number from list
+		Comparator<Integer> comp=(x,y)->{
+			return (x<y) ? -1:((x==y) ? 1:0);
+		};
+		li.stream().min(null)
+	}
+}

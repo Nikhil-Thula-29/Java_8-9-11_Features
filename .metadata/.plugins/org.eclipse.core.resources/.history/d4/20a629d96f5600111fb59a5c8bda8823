@@ -1,0 +1,17 @@
+package com.nt.java8features;
+
+public class Example1 implements Test{
+
+	public static void main(String[] args) {
+		Example1 ex=new Example1();
+		ex.display();
+		Test.add(); //we can call static methods inside static methods
+	}
+
+	@Override
+	public void display() {
+		System.out.println("This is display method in example1");	
+	}
+	
+	
+}

@@ -1,0 +1,31 @@
+package com.nt.java8features;
+
+public class Example1 implements Test{
+
+	public static void main(String[] args) {
+		Example1 ex=new Example1();
+		ex.display();
+		Test.add(); //we can call static methods inside static methods
+		ex.abc();
+		ex.show();
+	}
+
+	@Override
+	public void display() {
+		System.out.println("This is display method in example1");	
+	}
+	
+	public void abc() {
+		Test.super.show(); //this is non static so can be called from non static only.(default method)
+	}
+	
+	@Override
+	public void show() {
+		System.out.println("This is override of show in exmaple1");
+	}
+	
+	@Override
+	static void add() {
+		System.out.println("This is add method inside test interface");
+	}
+}

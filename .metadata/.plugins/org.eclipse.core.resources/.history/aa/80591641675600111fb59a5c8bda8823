@@ -1,0 +1,9 @@
+package com.nt.base;
+
+public class Samepackagewithsubclass extends Employee{
+
+	public static void main(String[] args) {
+		Samepackagewithsubclass sm=new Samepackagewithsubclass();
+		sm.
+	}
+}

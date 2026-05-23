@@ -1,0 +1,10 @@
+package com.nt.samepackage;
+
+import com.nt.base.Employee;
+
+public class SamePackageSubClass extends Employee{
+
+	public static void main(String[] args) {
+		SamePackageSubClass samePackageSubClass=new SamePackageSubClass();
+	}
+}
