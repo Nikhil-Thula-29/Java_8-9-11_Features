@@ -1,0 +1,70 @@
+package com.nt.collectionenhancements;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class DistinctGroupByCount {
+
+	public static void main(String[] args) {
+		List<Integer> li=new ArrayList<Integer>();
+		li.add(10);
+		li.add(53);
+		li.add(48);
+		li.add(16);
+		li.add(28);
+		li.add(33);
+		li.add(33);
+		li.add(16);
+		li.add(48);
+		
+		//Removing the duplicates from the list
+		System.out.println(li.stream().distinct().collect(Collectors.toList()));
+		long duplicateCount=(li.stream().count())-(li.stream().distinct().count());
+		System.out.println(duplicateCount);
+		
+		
+		List<Employee> emp=new ArrayList<Employee>();
+		emp.add(new Employee(1,"Nikhil",50050.033));
+		//emp.add(new Employee(1,"Nikhissl",500510.033));
+		emp.add(new Employee(2,"Raju",18000.0));
+		emp.add(new Employee(3,"Rani",65400.0));
+		emp.add(new Employee(4,"Kalyan",35400.0));
+		
+		//distinct employees
+		emp.stream().distinct().forEach((x)->System.out.println(x));
+		
+		//write a program to convert the given emplist in to hashmap<empId,emp>
+		Map<Integer, Employee> hm=emp.stream().collect(Collectors.toMap((x)->x.getEmpId(), (x)->x));
+		System.out.println("Employees as MAP: "+hm);
+		
+		//if duplicates are there in list
+		Map<Integer, Employee> hm2=emp.stream().distinct().collect(Collectors.toMap((x)->x.getEmpId(), (x)->x));
+		System.out.println("Employees as MAP without duplicates: "+hm2);
+		
+		//write a programm to create a list which contains empnames whose name is starting with k //two intermediate filter and map
+		List<String> empNames=emp.stream().filter((x)->x.getEmpName().startsWith("Ra")).map((x)->x.getEmpName()).collect(Collectors.toList());
+		System.out.println(empNames);
+		
+		//GroupBy
+		
+		List<String> sl=new ArrayList<String>();
+		sl.add("Nikhil");
+		sl.add("vijay");
+		sl.add("Kiran");
+		sl.add("Nikhil");
+		sl.add("Rajesh");
+		sl.add("Rajesh");
+		sl.add("Rajesh");
+		sl.add("Kiran");
+		sl.add("Vamshi");
+		sl.add("Naveen");
+		
+		//write a programm to get count of names by groupby
+		System.out.println(sl.stream().collect(Collectors.groupingBy((x)->x,Collectors.counting())));
+		
+		
+		
+	}
+}

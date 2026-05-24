@@ -1,0 +1,56 @@
+package com.nt.collectionenhancements;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LimitSkipFlatmap {
+
+	public static void main(String[] args) {
+		List<Integer> li=new ArrayList<Integer>();
+		li.add(10);
+		li.add(15);
+		li.add(20);
+		li.add(30);
+		li.add(45);
+		li.add(63);
+		li.add(65);
+		li.add(45);
+		li.add(15);
+		
+		//limit up to 4
+		li.stream().limit(4).forEach((x)->System.out.println(x));
+		
+		//to print highest number
+		System.out.println("Print the highest number");
+		li.stream().sorted(Collections.reverseOrder()).limit(1).forEach((x)->System.out.println(x));
+		
+		//skip
+		System.out.println("Skipping the first 3 elements");
+		li.stream().skip(3).forEach((x)->System.out.println(x));
+		
+		//Write a programm to print the second largest number
+		System.out.println("Second highest number");
+		li.stream().sorted(Collections.reverseOrder()).limit(2).skip(1).forEach((x)->System.out.println(x));
+		
+		List<Employee> emp=new ArrayList<Employee>();
+		emp.add(new Employee(1,"Nikhil",50050.033));
+		emp.add(new Employee(2,"Raju",18000.0));
+		emp.add(new Employee(3,"Rani",65400.0));
+		emp.add(new Employee(4,"Kalyan",35400.0));
+		
+		//to print max salary
+		Comparator<Employee> asc =
+				Comparator.comparing((x)->x);
+		
+		String name=emp.stream().max(asc).get().getEmpName();
+		System.out.println("Highest sal name: "+name);
+		
+		//to print second largest salary employee
+		System.out.println("Sorted as highest salary");
+		System.out.println(emp.stream().sorted(comp).collect(Collectors.toList()));
+		
+	}
+}

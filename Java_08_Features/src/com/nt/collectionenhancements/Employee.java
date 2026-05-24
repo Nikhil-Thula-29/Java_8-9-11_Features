@@ -1,5 +1,7 @@
 package com.nt.collectionenhancements;
 
+import java.util.Objects;
+
 public class Employee implements Comparable<Employee>{
 
 	private int empId;
@@ -44,6 +46,21 @@ public class Employee implements Comparable<Employee>{
 	public static int compare(Employee x, Employee y) {
         return (x.getEmpId() < y.getEmpId()) ? -1 : ((x.getEmpId() == y.getEmpId()) ? 0 : 1);
     }
+	@Override
+	public int hashCode() {
+		return Objects.hash(empId);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return empId == other.empId;
+	}
 	
 	
 }

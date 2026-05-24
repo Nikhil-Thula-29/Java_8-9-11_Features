@@ -1,0 +1,90 @@
+package com.nt.collectionenhancements;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class LimitSkipFlatmap {
+
+	public static void main(String[] args) {
+		List<Integer> li=new ArrayList<Integer>();
+		li.add(10);
+		li.add(15);
+		li.add(20);
+		li.add(30);
+		li.add(45);
+		li.add(63);
+		li.add(65);
+		li.add(45);
+		li.add(15);
+		
+		//limit up to 4
+		li.stream().limit(4).forEach((x)->System.out.println(x));
+		
+		//to print highest number
+		System.out.println("Print the highest number");
+		li.stream().sorted(Collections.reverseOrder()).limit(1).forEach((x)->System.out.println(x));
+		
+		//skip
+		System.out.println("Skipping the first 3 elements");
+		li.stream().skip(3).forEach((x)->System.out.println(x));
+		
+		//Write a programm to print the second largest number
+		System.out.println("Second highest number");
+		li.stream().sorted(Collections.reverseOrder()).limit(2).skip(1).forEach((x)->System.out.println(x));
+		
+		List<Employee> emp=new ArrayList<Employee>();
+		emp.add(new Employee(1,"Nikhil",50050.033));
+		emp.add(new Employee(2,"Raju",18000.0));
+		emp.add(new Employee(3,"Rani",65400.0));
+		emp.add(new Employee(4,"Kalyan",35400.0));
+		
+		//to print max salary
+		Comparator<Employee> asc =
+				Comparator.comparing((Employee x)->x.getSal());
+		
+		String name=emp.stream().max(asc).get().getEmpName();
+		System.out.println("Highest sal name: "+name);
+		
+		//sorted highest salary employees
+		System.out.println("Sorted as highest salary");
+		System.out.println(emp.stream().sorted(asc.reversed()).collect(Collectors.toList()));
+		
+		//This is based on id because in employee class we are implementing comparable with id check
+		System.out.println(emp.stream().sorted(Collections.reverseOrder()).collect(Collectors.toList())); 
+		
+		//Write a program to print second largest salary employee name
+		emp.stream().sorted(asc.reversed()).limit(2).skip(1).map((x)->x.getEmpName()).forEach((x)->System.out.println(x));
+		//max person sal name
+		emp.stream().sorted(asc.reversed()).limit(1).map((x)->x.getEmpName()).forEach((x)->System.out.println(x));
+		
+		
+		//find first element in list
+		System.out.println(li.stream().findFirst().get());
+		
+		//write a program to print sal
+		System.out.println(emp.stream().mapToDouble((x)->x.getSal()).sum());
+		System.out.println(emp.stream().mapToDouble((x)->x.getSal()).boxed().collect(Collectors.toList()));
+		DoubleSummaryStatistics ds= emp.stream().collect(Collectors.summarizingDouble((x)->x.getSal()));
+		System.out.println("Summary: "+ds);
+		
+		List<String> ln=new ArrayList<String>();
+		ln.add("Rajesh");
+		ln.add("Swetha");
+		
+		List<String> lm=new ArrayList<String>();
+		lm.add("Pavan");
+		lm.add("Naveen");
+		
+		List<List<String>> lk=new ArrayList<String>();
+		lk.addAll(ln);
+		lk.addAll(lm);
+		System.out.println(lk);
+		
+		
+		
+	}
+}
