@@ -1,0 +1,31 @@
+package com.nt.collectionenhancements;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.Date;
+
+public class LocalDateExample {
+
+	public static void main(String[] args) {
+		
+		//This is before java 8
+		System.out.println("This is before java 8");
+		Date d=new Date();
+		System.out.println(d);
+		
+		//Date
+		System.out.println("This is after java 8 only date");
+		LocalDate ld=LocalDate.now();
+		System.out.println(ld);
+		
+		//Time
+		System.out.println("This is after java 8 only time");
+		LocalTime lt=LocalTime.now();
+		System.out.println(lt);
+		
+		System.out.println("This is after java 8 only date and time");
+		LocalDateTime ldt=LocalDateTime.now();
+		System.out.println(ldt);
+	}
+}

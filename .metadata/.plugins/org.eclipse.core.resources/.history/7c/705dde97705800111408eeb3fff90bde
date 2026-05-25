@@ -1,0 +1,22 @@
+package com.nt.collectionenhancements;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Date;
+
+public class LocalDateExample {
+
+	public static void main(String[] args) {
+		
+		//This is before java 8
+		Date d=new Date();
+		System.out.println(d);
+		
+		//Date
+		LocalDate ld=LocalDate.now();
+		System.out.println(ld);
+		
+		LocalTime lt=LocalTime.now();
+		System.out.println("Local Time: "+lt);
+	}
+}

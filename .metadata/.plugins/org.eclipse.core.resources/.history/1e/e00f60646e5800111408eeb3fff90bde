@@ -1,0 +1,14 @@
+package com.nt.collectionenhancements;
+
+import java.util.Optional;
+
+public class OptionalExample {
+	
+	public static String display(String i) {
+		Optional<String> opt=Optional.of
+	}
+	
+	public static void main(String[] args) {
+		
+	}
+}

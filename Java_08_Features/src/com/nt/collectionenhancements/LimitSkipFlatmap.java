@@ -85,7 +85,12 @@ public class LimitSkipFlatmap {
 		System.out.println(lk);
 		
 		//flatmap
+		System.out.println(lk.stream().map((x)->x).collect(Collectors.toList()));
 		System.out.println(lk.stream().flatMap((x)->x.stream()).collect(Collectors.toList()));
+		
+		//reduce
+		System.out.println("Reduce sum: ");
+		System.out.println(li.stream().reduce(0, (x,y)->x+y));
 		
 	}
 }

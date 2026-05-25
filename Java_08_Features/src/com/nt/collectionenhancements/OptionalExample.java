@@ -1,0 +1,16 @@
+package com.nt.collectionenhancements;
+
+import java.util.Optional;
+
+public class OptionalExample {
+	
+	public static Optional<String> display(String i) {
+		Optional<String> opt=Optional.ofNullable(i);
+		return opt;
+	}
+	
+	public static void main(String[] args) {
+		Optional<String> output=display("Nikhil");
+		System.out.println(output.get());
+	}
+}
