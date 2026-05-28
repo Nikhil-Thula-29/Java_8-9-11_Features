@@ -6,6 +6,8 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.Month;
 import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -56,7 +58,6 @@ public class LocalDateExample {
 		System.out.println(dur.toDays());
 		System.out.println(dur.toHours());
 		System.out.println(dur.toMinutes());
-		System.out.println(dur.toMinutes());
 		System.out.println(dur.getSeconds());
 		
 		//Converting string date to date format
@@ -72,6 +73,12 @@ public class LocalDateExample {
 		System.out.println(LocalDateTime.parse(date,ft)); //to convert string to datetime format
 		System.out.println(LocalDate.parse(date1,onlydate)); //to convert string to only date format
 		
+		//ZonedDateTime
+		ZonedDateTime currentTimeIndia=ZonedDateTime.now();
+		System.out.println(currentTimeIndia);
+		
+		ZonedDateTime instantUTC=currentTimeIndia.withZoneSameInstant(ZoneId.of("America/New_York")); //check inside zoneId
+		System.out.println(instantUTC);
 		
 	}
 }

@@ -4,6 +4,7 @@
 		<item key="replaceBarOpen" value="false"/>
 		<item key="selection" value="compare"/>
 		<list key="findhistory">
+			<item value="current"/>
 			<item value="compare"/>
 			<item value="compareto"/>
 		</list>
