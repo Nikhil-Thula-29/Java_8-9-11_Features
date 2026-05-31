@@ -1,8 +1,0 @@
-package com.nt.java8features;
-
-public class EmployeeWithPreDefinedClasses {
-
-	public static void main(String[] args) {
-		
-	}
-}

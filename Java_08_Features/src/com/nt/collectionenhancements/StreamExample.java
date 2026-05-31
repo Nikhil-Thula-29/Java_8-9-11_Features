@@ -2,6 +2,7 @@ package com.nt.collectionenhancements;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -65,5 +66,9 @@ public class StreamExample {
 		//write a programm to collect all the emp ids to separate list
 		List<Integer> ids=emp.stream().map((x)->x.getEmpId()).collect(Collectors.toList());
 		System.out.println(ids);
+		
+		//generate
+		Stream.generate(()->new Random().nextInt()).limit(4).forEach(p->System.out.println(p));
+		Stream.generate(()->100).limit(4).forEach(p->System.out.println(p)); //we need to limit it or else it will loop continously.
 	}
 }

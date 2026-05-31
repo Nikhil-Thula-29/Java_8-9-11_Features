@@ -40,6 +40,15 @@ public class MinMaxSort {
 		Comparator<Employee> compa=(x,y)->{
 			return (x.getSal()<y.getSal()) ? -1:((x.getSal()==y.getSal()) ? 0:1); //for ascending order
 		};
+		
+		//using compartor comparing
+		Comparator<Employee> compe=Comparator.comparing((Employee x)->x.getSal()); //type cast is needed 
+		String maname=emp.stream().max(compe).get().getEmpName();
+		System.out.println("Max name with comparing comparator is : "+maname);
+		
+		String miniame=emp.stream().max(compe.reversed()).get().getEmpName();
+		System.out.println("Max name with comparing comparator is : "+miniame);
+		
 		String name=emp.stream().max(compa).get().getEmpName();
 		System.out.println("Max name is : "+name);
 		
